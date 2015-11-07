@@ -7,22 +7,22 @@
 
 
 // 簡単なvectorの実装
+// Vector.cpp
+// Vectorの実装を記述したファイル
 
-#include <iostream>
-using namespace std; // std::なしでstd内の名前を見えるようにする
+#include "Vector.h" // インタフェースを取り込む
 
-class Vector {
-public: // インタフェースの部分
-    Vector(int s) :elem{new double[s]}, sz{s} { } // Vectorを構築
-    double& operator[ ](int i) { return elem[i]; } //添字による要素のアクセス
-    int size() { return sz; }
-private:
-    double* elem; // 要素へのポインタ
-    int sz;       // 要素数
-};
-
-int
-main()
+Vector::Vector(int s)
+  :elem {new double[s]}, sz{s}
 {
-    Vector v(6); // 6個の要素をもつVector
+}
+
+double& Vector::operator[](int i)
+{
+  return elem[i];
+}
+
+int Vector::size()
+{
+  return sz;
 }
