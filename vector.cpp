@@ -15,6 +15,7 @@ class Vector {
 public: // インタフェースの部分
     Vector(int s) :elem{new double[s]}, sz{s} { } // Vectorを構築
     double& operator[ ](int i) { return elem[i]; } //添字による要素のアクセス
+    int size() { return sz; }
 private:
     double* elem; // 要素へのポインタ
     int sz;       // 要素数
